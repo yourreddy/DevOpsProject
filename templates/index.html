@@ -23,8 +23,10 @@
       
     </div>
     <div>
-        
-        <div>{{company["result"]["name"]}}</div>
+        {% for result in company["result"] %}
+        <div>{{result["name"]}}</div>
+        {% endfor %}
+        <div>{{company["result"]}}</div>
         
     </div>  
   </body>
