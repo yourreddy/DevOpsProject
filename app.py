@@ -26,7 +26,7 @@ images = [
 def index():
     api_url = "https://redrockdev.service-now.com/api/now/table/core_company"
     response = requests.get(api_url, auth=('gsukumar2', 'R3dr0ck'))
-    return response.status_code
+    return type(response)
     #if(response.status_code == 200):
         #return response.json()
     #else:
