@@ -23,10 +23,24 @@
       
     </div>
     <div>
-        {% for result in company["result"] %}
-        <div>{{result["name"]}}</div>
-        {% endfor %}
-        <div>{{company["result"]}}</div>
+        <table>
+          <thead>
+              <tr>
+                 <th>Company</th>
+                 <th>Country</th> 
+                <th>Industry</th>
+              </tr>
+          </thead>
+          <tbody>
+            {% for result in company["result"] %}
+              <tr>
+                <td>{{result["name"]}}<//td>
+                <td>{{result["country"]}}<//td>
+                <td>{{result["u_csc_industry"]}}</td>
+           {% endfor %}
+              </tr>  
+          </tbody>
+      </table>
         
     </div>  
   </body>
