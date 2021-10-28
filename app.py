@@ -34,7 +34,7 @@ def index():
    
     
     url = random.choice(images)
-    return render_template('index.html', url=url)
+    return render_template('index.html', url=url, company=json.loads(response.text)['response'])
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
