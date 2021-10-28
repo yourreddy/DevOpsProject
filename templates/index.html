@@ -20,7 +20,12 @@
   <body>
     <div class="container">
       <h4>Welcome to DXC RedRock Docker Container, The Python Flask App deployed using Docker Image and kick start container</h4>
-      {{company}}
+      
     </div>
+    <div>
+        {% for result in company %}
+        <div>{{result["name"]}}</div>
+        {% endfor %}
+    </div>  
   </body>
 </html>
