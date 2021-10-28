@@ -1,5 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, jsonify, render_template
 import random
+import requests
 
 app = Flask(__name__)
 
@@ -19,8 +20,18 @@ images = [
     "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr03/15/10/anigif_enhanced-buzz-11980-1381846269-1.gif"
 ]
 
+
+
 @app.route('/')
 def index():
+    api_url = "https://redrockdev.service-now.com/api/now/table/core_company"
+    response = requests.get(api_url, auth=('gsukumar2', 'R3dr0ck'))
+    if(response.status_code == 200):
+        return jsonify({'Company': response.json()}), 201
+    else:
+        return jsonify({'Company': 'No Json retrieved'})   
+   
+    
     url = random.choice(images)
     return render_template('index.html', url=url)
 
