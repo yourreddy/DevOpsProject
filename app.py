@@ -26,10 +26,10 @@ images = [
 def index():
     api_url = "https://redrockdev.service-now.com/api/now/table/core_company"
     response = requests.get(api_url, auth=('gsukumar2', 'R3dr0ck'))
-    #if(response.status_code == 200):
-        #return response.json()
-    #else:
-        #return jsonify({'Company': 'No Json retrieved'})   
+    if(response.status_code == 200):
+        return response.json()
+    else:
+        return jsonify({'Company': 'No Json retrieved'})   
    
     
     url = random.choice(images)
