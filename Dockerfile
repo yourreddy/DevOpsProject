@@ -12,7 +12,7 @@ RUN pip install requests
 # copy files required for the app to run
 COPY app.py /usr/src/app/
 COPY templates/index.html /usr/src/app/templates/
-COPY templates/img/Devops.png /usr/src/app/templates/img/
+
 
 # tell the port number the container should expose
 EXPOSE 5000
