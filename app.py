@@ -1,6 +1,7 @@
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, render_template
+#, jsonify, request, 
 import random
-import requests
+#import requests
 
 app = Flask(__name__)
 
@@ -24,8 +25,8 @@ images = [
 
 @app.route('/')
 def index():
-    api_url = ""
-    resp = requests.get(api_url, auth=('', ''))
+    #api_url = ""
+    #resp = requests.get(api_url, auth=('', ''))
    
     #if(response.status_code == 200):
         #return response.json()
@@ -34,7 +35,8 @@ def index():
    
     
     url = random.choice(images)
-    return render_template('index.html', url=url, company=resp.json())
+    #return render_template('index.html', url=url, company=resp.json())
+    return render_template('index.html', url=url)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
