@@ -1,5 +1,4 @@
 from flask import Flask, render_template
-#, jsonify, request, 
 import random
 #import requests
 
@@ -25,17 +24,7 @@ images = [
 
 @app.route('/')
 def index():
-    #api_url = ""
-    #resp = requests.get(api_url, auth=('', ''))
-   
-    #if(response.status_code == 200):
-        #return response.json()
-    #else:
-        #return jsonify({'Company': 'No Json retrieved'})   
-   
-    
     url = random.choice(images)
-    #return render_template('index.html', url=url, company=resp.json())
     return render_template('index.html', url=url)
 
 if __name__ == "__main__":
